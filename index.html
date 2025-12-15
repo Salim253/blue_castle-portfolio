@@ -160,6 +160,13 @@
             animation: fadeInUp 1s ease 3s forwards;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .cta-button {
             display: inline-block;
             padding: 12px 30px;
@@ -199,6 +206,28 @@
             left: 100%;
         }
 
+        .cv-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: var(--dark);
+            border: 2px solid var(--secondary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease 4s forwards;
+        }
+
+        .cv-button:hover {
+            background: transparent;
+            color: var(--secondary);
+            box-shadow: 0 0 10px var(--secondary);
+        }
+
         /* Sections */
         section {
             padding: 100px 50px;
@@ -224,6 +253,71 @@
             height: 3px;
             background: var(--primary);
             box-shadow: var(--glow);
+        }
+
+        /* CV Section */
+        .cv-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cv-info {
+            background: var(--darker);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--glow);
+        }
+
+        .cv-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            text-shadow: var(--glow);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text);
+            margin-top: 5px;
+        }
+
+        .cv-download-container {
+            margin-top: 40px;
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: var(--glow);
+        }
+
+        .cv-download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--primary);
         }
 
         /* About Section */
@@ -721,12 +815,33 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         .submit-btn:hover {
             background: var(--primary);
             color: var(--dark);
             box-shadow: var(--glow);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+
+        .success {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+            color: #ff0000;
         }
 
         /* Footer */
@@ -922,6 +1037,11 @@
                 font-size: 1.5rem;
             }
 
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             section {
                 padding: 80px 20px;
             }
@@ -952,6 +1072,11 @@
                 max-width: 250px;
                 bottom: 80px;
                 right: 20px;
+            }
+
+            .cv-stats {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -996,6 +1121,7 @@
             <a href="#about">À Propos</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#certifications">Certifications</a>
+            <a href="#cv">Mon CV</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -1005,7 +1131,46 @@
         <h1>SALIM ARINLOYE</h1>
         <div class="alias">Blūe-C@stle</div>
         <p>Pentesteur Débutant & Designer Graphique - Sécurité des systèmes et création visuelle</p>
-        <a href="#portfolio" class="cta-button">Voir mes réalisations</a>
+        <div class="hero-buttons">
+            <a href="#portfolio" class="cta-button">Voir mes réalisations</a>
+            <a href="#cv" class="cv-button">📥 Télécharger mon CV</a>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv">
+        <h2 class="section-title">MON CURRICULUM VITAE</h2>
+        <div class="cv-section">
+            <div class="cv-info">
+                <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8rem;">Profil Professionnel</h3>
+                <p style="margin-bottom: 25px;">Pentesteur passionné avec une expertise en sécurité des systèmes, design graphique et développement web. Recherche d'opportunités en cybersécurité offensive et défensive.</p>
+                
+                <div class="cv-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Années d'Expérience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projets Réalisés</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cv-download-container">
+                <a href="./docs/cv-salim-arinloye.pdf" class="cv-download-btn" download>
+                    <i class="fas fa-download"></i>
+                    Télécharger mon CV (PDF)
+                </a>
+                <p style="margin-top: 15px; opacity: 0.8; font-size: 0.9rem;">
+                    Format: PDF • Taille: ~1.5MB • Dernière mise à jour: Janvier 2025
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -1022,6 +1187,8 @@
                     <div class="skill">Développement Web</div>
                     <div class="skill">OSPF/RIP</div>
                     <div class="skill">PixelLab</div>
+                    <div class="skill">Cybersécurité</div>
+                    <div class="skill">Ethical Hacking</div>
                 </div>
             </div>
             <div class="terminal">
@@ -1156,19 +1323,20 @@
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Votre nom" required>
+                        <input type="text" class="form-input" id="name" placeholder="Votre nom" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Votre email" required>
+                        <input type="email" class="form-input" id="email" placeholder="Votre email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Sujet" required>
+                        <input type="text" class="form-input" id="subject" placeholder="Sujet" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input" placeholder="Votre message" required></textarea>
+                        <textarea class="form-input" id="message" placeholder="Votre message" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Envoyer le message</button>
                 </form>
+                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
     </section>
@@ -1176,10 +1344,10 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://linkedin.com/in/asalimpentest" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Salim253" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Salimarinloye23" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/salimarinloye23/" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/asalimpentest" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Salim253" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Salimarinloye23" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/salimarinloye23/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <p class="copyright">© 2025 Salim Arinloye | Blūe-C@stle. Tous droits réservés.</p>
     </footer>
@@ -1190,13 +1358,10 @@
         <h3>💻 Le Pirate du Snack — by blūe_c@stle</h3>
         <p>Un sudo par ici, un bug par-là,
             Mon café chauffe plus que mon CPU, déjà.
-            J’pénètre les ports comme un ninja du net,
+            J'pénètre les ports comme un ninja du net,
             Mais juste pour voir — promis, rien de suspect 😏</p>
-
-        <p>Un GIF dans les logs, un “lol” dans les shells</p>
-
+        <p>Un GIF dans les logs, un "lol" dans les shells</p>
         <p> </> blūe_c@stle est passé — paix et bordel ✌️</p>
-        
     </div>
 
     <script>
@@ -1222,34 +1387,34 @@
                     title: "Cartes de Visite",
                     description: "Conception de cartes de visite modernes et professionnelles pour entreprises et particuliers.",
                     images: [
-                        "./images/img (2).png",      // REMPLACEZ PAR VOS IMAGES
-                        "./images/img (2).png",      // REMPLACEZ PAR VOS IMAGES
-                        "./images/img (2).png"       // REMPLACEZ PAR VOS IMAGES
+                        "./images/img (2).png",
+                        "./images/img (2).png",
+                        "./images/img (2).png"
                     ]
                 },
                 {
                     title: "Badges d'Identification",
                     description: "Création de badges professionnels pour événements, entreprises et institutions.",
                     images: [
-                        "./images/img (1).png",             // REMPLACEZ PAR VOS IMAGES
-                        "./images/img (1).png"              // REMPLACEZ PAR VOS IMAGES
+                        "./images/img (1).png",
+                        "./images/img (1).png"
                     ]
                 },
                 {
                     title: "Attestations de Formation",
                     description: "Design d'attestations et certificats de formation élégants et personnalisés.",
                     images: [
-                        "./images/certif1.png",       // REMPLACEZ PAR VOS IMAGES
-                        "./images/certf2.png",       // REMPLACEZ PAR VOS IMAGES
-                        "./images/certif3.png"        // REMPLACEZ PAR VOS IMAGES
+                        "./images/certif1.png",
+                        "./images/certf2.png",
+                        "./images/certif3.png"
                     ]
                 },
                 {
                     title: "Affiches Publicitaires",
                     description: "Conception d'affiches percutantes pour campagnes marketing et événements.",
                     images: [
-                        "./images/img (3).png",           // REMPLACEZ PAR VOS IMAGES
-                        "./images/img (5).png",           // REMPLACEZ PAR VOS IMAGES
+                        "./images/img (3).png",
+                        "./images/img (5).png",
                         "./images/img (4).png",
                         "./images/img (8).png",
                         "./images/img (9).png"
@@ -1261,25 +1426,24 @@
                     title: "Configuration CCNA",
                     description: "Mise en place et configuration de réseaux selon les standards Cisco CCNA.",
                     images: [
-                        "./images/ccna-1.jpg",               // REMPLACEZ PAR VOS IMAGES
-                        "./images/ccna-2.jpg",               // REMPLACEZ PAR VOS IMAGES
-                        "./images/ccna-3.jpg"                // REMPLACEZ PAR VOS IMAGES
+                        "./images/ccna-1.jpg",
+                        "./images/ccna-2.jpg",
+                        "./images/ccna-3.jpg"
                     ]
                 },
                 {
                     title: "Implémentation OSPF",
                     description: "Déploiement et configuration du protocole OSPF pour routage dynamique.",
                     images: [
-                        "./images/ospf2.png",               // REMPLACEZ PAR VOS IMAGES
-                        "./images/OSPF.png"                // REMPLACEZ PAR VOS IMAGES
+                        "./images/ospf2.png",
+                        "./images/OSPF.png"
                     ]
                 },
                 {
                     title: "Configuration RIP",
                     description: "Mise en œuvre du protocole RIP pour réseaux de petite et moyenne taille.",
                     images: [
-                        "./images/RIP.png",                // REMPLACEZ PAR VOS IMAGES
-                        
+                        "./images/RIP.png",
                     ]
                 }
             ],
@@ -1288,15 +1452,15 @@
                     title: "Site Portfolio",
                     description: "Développement de sites portfolio personnalisés avec design responsive.",
                     images: [
-                        "./images/portfolio.png",          // REMPLACEZ PAR VOS IMAGES
+                        "./images/portfolio.png",
                     ]
                 },
                 {
                     title: "Applications Sécurisées",
                     description: "Création d'applications web avec focus sur la sécurité et les bonnes pratiques.",
                     images: [
-                        "./images/app1.png",      // REMPLACEZ PAR VOS IMAGES
-                        "./images/app2.png",      // REMPLACEZ PAR VOS IMAGES
+                        "./images/app1.png",
+                        "./images/app2.png",
                     ]
                 }
             ],
@@ -1305,14 +1469,14 @@
                     title: "Certification CCNA",
                     description: "Certification Cisco Certified Network Associate",
                     images: [
-                        "./images/certificat-ccna.jpg"       // REMPLACEZ PAR VOS IMAGES
+                        "./images/certificat-ccna.jpg"
                     ]
                 },
                 {
                     title: "Certification Pentesting",
                     description: "Certification en tests d'intrusion et sécurité offensive",
                     images: [
-                        "./images/att1.png",    // REMPLACEZ PAR VOS IMAGES
+                        "./images/att1.png",
                         "./images/att2.png",
                         "./images/att3.png",
                         "./images/att4.png",
@@ -1322,7 +1486,7 @@
                     title: "Formation Design Graphique",
                     description: "Certificat de formation en design graphique et PAO",
                     images: [
-                        "./images/certificat-design.jpg"     // REMPLACEZ PAR VOS IMAGES
+                        "./images/certificat-design.jpg"
                     ]
                 }
             ]
@@ -1440,13 +1604,77 @@
             line.style.animationDelay = `${index * 0.5}s`;
         });
 
-        // Form submission
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', (e) => {
+        // =============================================
+        // FORMULAIRE DE CONTACT FONCTIONNEL
+        // =============================================
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Message envoyé! Je vous répondrai dans les plus brefs délais.');
-            form.reset();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            // Récupérer les données du formulaire
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to: 'salimarinloye253@gmail.com' // Votre email
+            };
+            
+            try {
+                // Utiliser Formspree (service gratuit pour les formulaires)
+                const response = await fetch('https://formspree.io/f/xrgndqre', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    // Afficher le message de succès
+                    formMessage.textContent = '✅ Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Réinitialiser le formulaire
+                    contactForm.reset();
+                    
+                    // Masquer le message après 5 secondes
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            } catch (error) {
+                // Afficher le message d'erreur
+                formMessage.textContent = '❌ Une erreur est survenue. Veuillez réessayer ou m\'envoyer un email directement.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                
+                console.error('Erreur:', error);
+            } finally {
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
         });
+
+        // Alternative: Formulaire par email direct (fallback)
+        function sendEmailDirectly(formData) {
+            const mailtoLink = `mailto:salimarinloye253@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            window.location.href = mailtoLink;
+            return true;
+        }
 
         // Fonction pour générer les projets
         function generateProjects() {
@@ -1632,5 +1860,4 @@
         });
     </script>
 </body>
-
 </html>
